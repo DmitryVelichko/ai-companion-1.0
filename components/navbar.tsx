@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Poppins } from 'next/font/google';
 import { UserButton } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
+import { MobileSidebar } from '@/components/mobile-sidebar';
 
 import { cn } from '@/lib/utils';
 import { ModeToggle } from '@/components/mode-toggle';
@@ -13,9 +14,9 @@ const font = Poppins({ weight: '600', subsets: ['latin'] });
 
 export const Navbar = () => {
   return (
-    <div className='fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary'>
+    <div className='fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16'>
       <div className='flex items-center'>
-        <Menu className='block md:hidden' />
+        <MobileSidebar />
         <Link href='/'>
           <h1
             className={cn(
